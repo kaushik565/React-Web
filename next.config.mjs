@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    // Explicitly NOT using static export - server rendering required
-    // output: 'export' - DISABLED
     images: {
         unoptimized: true
-    }
+    },
+    // Ensure proper Vercel serverless deployment
+    experimental: {
+        serverActions: {
+            bodySizeLimit: '2mb',
+        },
+    },
 };
 
 export default nextConfig;

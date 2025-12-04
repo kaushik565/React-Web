@@ -350,13 +350,13 @@ export default function InteractivePresentation() {
               </div>
             </div>
 
-            {/* Customer Trust Impact */}
+            {/* QMS Traceability Issues */}
             <div className="glass-strong rounded-3xl p-8 border-2 border-red-500/50 hover:scale-105 transition-all group">
-              <div className="text-6xl mb-4 group-hover:rotate-12 transition-transform">👥</div>
-              <h3 className="text-2xl font-bold text-red-400 mb-2">Customer Trust</h3>
-              <p className="text-gray-300 text-sm mb-4">Impact if issues reach customers</p>
+              <div className="text-6xl mb-4 group-hover:rotate-12 transition-transform">📋</div>
+              <h3 className="text-2xl font-bold text-red-400 mb-2">QMS Traceability Issues</h3>
+              <p className="text-gray-300 text-sm mb-4">Due to mix-ups: delays in closures, reworks, batch compilation errors</p>
               <div className="px-3 py-1 rounded-full bg-red-900/40 inline-block">
-                <span className="text-sm font-bold text-red-300">HIGH</span>
+                <span className="text-sm font-bold text-red-300">CRITICAL</span>
               </div>
             </div>
           </div>

@@ -1,6 +1,5 @@
 import InteractivePresentation from '@/components/InteractivePresentation';
 import type { Metadata } from 'next';
-import { reportWebVitals } from '@/lib/web-vitals';
 
 export const metadata: Metadata = {
   title: "Automatic QR Scanning JIG | Batch Mix-up Prevention",

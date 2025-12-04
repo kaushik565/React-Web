@@ -1,8 +1,8 @@
 export default function ConsequencesSlide() {
   const risks = [
-    { icon: '⚠️', risk: 'Mix-up undetected', impact: 'Line rejection, production delays, batch rework', severity: 'critical' },
-    { icon: '😓', risk: 'Manual fatigue', impact: 'Higher human errors, inconsistent verification', severity: 'high' },
-    { icon: '📝', risk: 'Missing traceability', impact: 'Documentation gaps, investigation delays', severity: 'medium' }
+    { icon: '⏸️', risk: 'Closure Delays', impact: 'QMS traceability incomplete, batch closure delayed, production halted', severity: 'critical' },
+    { icon: '🔄', risk: 'Rework & Re-batching', impact: 'Material rework, batch compilation errors, extended cycle time', severity: 'high' },
+    { icon: '📊', risk: 'Batch Compilation Issues', impact: 'Incomplete batch records, missing line/mould validation data, audit gaps', severity: 'high' }
   ];
 
   const benefits = [

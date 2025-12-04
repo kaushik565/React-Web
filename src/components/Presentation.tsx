@@ -83,9 +83,3 @@ export default function Presentation() {
     </>
   );
 }
-
-// powershell
-// cd "d:\BATCH MIX UP\batch-mix-presentation"
-// gh auth login
-// # Choose GitHub.com, HTTPS, and authenticate
-// gh repo create your-username/batch-mix-presentation --source . --private --push

@@ -1,52 +1,92 @@
-﻿import React from "react";
-
 export default function TeamSlide() {
+  const leadership = [
+    { title: 'Plant Head', name: 'G.Uday Bhaskar', role: 'GM-Operations', detail: 'Champions 2.0 Implementation', icon: '👔', color: 'from-indigo-500 to-purple-600' },
+    { title: 'QA Management', name: 'Hameed C.R.', role: 'Assistant Manager - QA', detail: 'Project Sponsor & Approver', icon: '🎯', color: 'from-pink-500 to-rose-600' },
+    { title: 'Design Team', name: 'Gompa Naidu', role: 'HOD - DI', detail: 'Coordination with BigTec and source code', icon: '🛠️', color: 'from-orange-500 to-red-600' },
+    { title: 'Technical Support', name: 'S. Chakravarthi', role: 'Maintenance Site-III', detail: 'Hardware & ACTJ Support', icon: '⚙️', color: 'from-cyan-500 to-blue-600' }
+  ];
+
+  const contributors = [
+    { role: 'BigTec Labs', name: 'Salman Khaja - Source Code & Integration', icon: '💻' },
+    { role: 'Production Lead', name: 'Santosh Yavvari - Guidance', icon: '🏭' },
+    { role: 'IT Support', name: 'Raj Kumar Kanithi - USB Access & IT Infrastructure', icon: '🖥️' },
+    { role: 'Materials', name: 'G.Bala Sri Ram & Vadlapudi Ramya - Cartridge Provision for Testing', icon: '📦' },
+    { role: 'Maintenance Support', name: 'Sri Ram & Maintenance Team - Technical Support in Field', icon: '🔧' }
+  ];
+
   return (
-    <section className="w-full px-[clamp(16px,3vmin,32px)] py-[clamp(16px,4vmin,40px)]">
-      <div className="text-center mb-[clamp(16px,4vmin,32px)]">
-        <h2 className="text-[clamp(1.4rem,4.5vmin,2.2rem)] font-bold">👥 Project Team & Acknowledgments</h2>
+    <div className="flex flex-col h-full relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl float"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl float"></div>
       </div>
-      <div className="max-w-6xl mx-auto space-y-[clamp(16px,3vmin,24px)]">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[clamp(12px,2.5vmin,20px)]">
-          {[
-            {title:'Plant Head', text:'G.Uday Bhaskar\nGM-Operations\nChampions 2.0 Implementation', bg:'linear-gradient(135deg,#667eea 0%,#764ba2 100%)'},
-            {title:'QA Management', text:'Hameed C.R.\nAssistant Manager - QA\nProject Sponsor & Approver', bg:'linear-gradient(135deg,#f093fb 0%,#f5576c 100%)'},
-            {title:'Design Team', text:'Gompa Naidu\nHOD - DI\nCoordination with BigTec and source code', bg:'linear-gradient(135deg,#f5af19 0%,#f12711 100%)'},
-            {title:'Technical Support', text:'S. Chakravarthi\nMaintenance Site-III\nHardware & ACTJ Support', bg:'linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)'},
-          ].map((c, i) => (
-            <div key={i} className="rounded-xl p-[clamp(16px,3vmin,24px)] text-white" style={{background:c.bg}}>
-              <h3 className="text-[clamp(1rem,3vmin,1.2rem)] font-semibold">{c.title}</h3>
-              <p className="mt-[clamp(6px,1.5vmin,10px)] text-[clamp(0.95rem,2.6vmin,1.1rem)] whitespace-pre-line leading-relaxed">{c.text}</p>
+
+      <div className="text-center mb-6 pb-4 bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 text-white rounded-t-xl p-4 flex-shrink-0 relative z-10">
+        <h2 className="text-[clamp(1.2em,2.2vmin,1.8em)] font-extrabold drop-shadow-lg">
+          👥 Project Team & Acknowledgments
+        </h2>
+      </div>
+
+      <div className="flex-1 overflow-auto pr-3 relative z-10">
+        {/* Leadership Grid */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          {leadership.map((leader, idx) => (
+            <div key={idx} className={`bg-gradient-to-br ${leader.color} rounded-2xl p-6 card-shadow transform hover:scale-[1.02] transition-all duration-300`}>
+              <div className="text-5xl mb-3">{leader.icon}</div>
+              <h3 className="text-white font-bold text-xl mb-2">{leader.title}</h3>
+              <div className="bg-white/20 backdrop-blur-sm rounded-lg p-3 mb-2">
+                <p className="text-white font-bold text-lg">{leader.name}</p>
+                <p className="text-white/90 text-sm">{leader.role}</p>
+              </div>
+              <p className="text-white/90 text-sm">{leader.detail}</p>
             </div>
           ))}
         </div>
 
-        <div className="rounded-xl p-[clamp(16px,3vmin,24px)] bg-white/5 ring-1 ring-white/10 backdrop-blur"
-             style={{background:"linear-gradient(135deg,#1e293b 0%,#0f172a 100%)"}}>
-          <h3 className="text-white font-semibold text-[clamp(1rem,3vmin,1.2rem)]">Key Contributors</h3>
-          <div className="mt-[clamp(10px,2vmin,14px)] grid grid-cols-1 sm:grid-cols-2 gap-[clamp(10px,2vmin,14px)] text-white/90">
-            <div className="flex items-center justify-between"><span className="font-medium"> BigTec Labs:</span><span>Salman Khaja - Source Code & Integration</span></div>
-            <div className="flex items-center justify-between"><span className="font-medium"> Production Lead:</span><span>Santosh Yavvari - Guidance</span></div>
-            <div className="flex items-center justify-between"><span className="font-medium"> IT Support:</span><span>Raj Kumar Kanithi - USB Access & IT Infrastructure</span></div>
-            <div className="flex items-center justify-between"><span className="font-medium"> Materials:</span><span>G.Bala Sri Ram & Vadlapudi Ramya - Cartridge Provision for Testing</span></div>
-            <div className="flex items-center justify-between"><span className="font-medium"> Maintenance Support:</span><span>Sri Ram & Maintenance Team - Technical Support in Field</span></div>
+        {/* Key Contributors */}
+        <div className="glass-strong rounded-2xl p-6 mb-6">
+          <h3 className="text-white font-bold text-xl mb-4 flex items-center gap-2">
+            <span className="text-2xl">🌟</span> Key Contributors
+          </h3>
+          <div className="grid grid-cols-1 gap-3">
+            {contributors.map((contributor, idx) => (
+              <div key={idx} className="glass rounded-xl p-4 hover:bg-white/10 transition-all">
+                <div className="flex items-center gap-3">
+                  <div className="text-2xl">{contributor.icon}</div>
+                  <div className="flex-1">
+                    <span className="text-cyan-400 font-bold">{contributor.role}:</span>
+                    <span className="text-gray-300 ml-2">{contributor.name}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="rounded-xl p-[clamp(16px,3vmin,24px)] text-white" style={{background:"linear-gradient(135deg,#f093fb 0%,#f5576c 100%)"}}>
-          <h3 className="text-[clamp(1rem,3vmin,1.2rem)] font-semibold">Special Acknowledgment</h3>
-          <p className="mt-[clamp(6px,1.5vmin,10px)] text-[clamp(0.95rem,2.6vmin,1.1rem)] leading-relaxed">
-            <strong>CH.Praneet Raj</strong> — For bringing this idea into focus, supporting me in the initial stage and every step. Without his encouragement and involvement, this project would not have reached its current form.
-          </p>
+        {/* Special Acknowledgment */}
+        <div className="bg-gradient-to-br from-pink-500 via-rose-600 to-red-600 rounded-2xl p-6 mb-4 text-white shadow-2xl">
+          <h3 className="text-2xl font-black mb-3 flex items-center gap-2">
+            <span className="text-3xl">💖</span> Special Acknowledgment
+          </h3>
+          <div className="glass-strong rounded-xl p-5">
+            <p className="text-lg leading-relaxed">
+              <span className="font-black text-xl">CH. Praneet Raj</span> — For bringing this idea into focus, supporting me in the initial stage and every step. Without his encouragement and involvement, this project would not have reached its current form.
+            </p>
+          </div>
         </div>
 
-        <div className="rounded-xl p-[clamp(16px,3vmin,24px)] text-white" style={{background:"linear-gradient(135deg,#667eea 0%,#764ba2 100%)"}}>
-          <h3 className="text-[clamp(1rem,3vmin,1.2rem)] font-semibold"> Champions 2.0 Initiative</h3>
-          <p className="mt-[clamp(6px,1.5vmin,10px)] text-[clamp(0.95rem,2.6vmin,1.1rem)] leading-relaxed">
-            This project was inspired by an initiative led by <strong>GM-Operations, G.Uday Bhaskar</strong> under <strong>Champions 2.0</strong>. The program encourages every new joiner to select a meaningful improvement task and implement it end-to-end. I chose this jig as my Champions 2.0 task and executed it fully — from concept to testing and handover.
-          </p>
+        {/* Champions 2.0 Banner */}
+        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-6 text-white shadow-2xl">
+          <h3 className="text-2xl font-black mb-3 flex items-center gap-2">
+            <span className="text-3xl">🏆</span> Champions 2.0 Initiative
+          </h3>
+          <div className="glass-strong rounded-xl p-5">
+            <p className="text-lg leading-relaxed">
+              This project was inspired by an initiative led by <span className="font-bold text-cyan-300">GM-Operations, G.Uday Bhaskar</span> under <span className="font-bold text-green-300">Champions 2.0</span>. The program encourages every new joiner to select a meaningful improvement task and implement it end-to-end. I chose this jig as my Champions 2.0 task and executed it fully — from concept to testing and handover.
+            </p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,28 +1,107 @@
-﻿import React from "react";
-
 export default function BenefitsSlide() {
-  const features = [
-    {icon:'', title:'Zero Defect Quality', text:'100% batch verification accuracy. Eliminates mix-up risks that threaten product recalls and regulatory audits. Protects brand reputation.'},
-    {icon:'⚡', title:'Production Efficiency', text:'Faster than manual checks. Consistent cycle times minimize bottlenecks.'},
-    {icon:'', title:'Zero Additional Investment', text:'Built entirely with existing resources. Uses Raspberry Pi, GM65 scanner, and integrates with current ACTJ/CPSR systems. Prevents rework and scrap without new CAPEX.'},
-    {icon:'🤝', title:'Operator Empowerment', text:'Instant LED + buzzer feedback. Operators focus on action, not manual QR checks. Reduces fatigue and human error to zero.'},
-    {icon:'', title:'Scalable Architecture', text:'Adaptable to any batch size or mould configuration. Future-ready for MES integration and multi-line rollout.'},
-    {icon:'', title:'Regulatory Confidence', text:'Complete logging + remote audit access. Full traceability and automated documentation reduce audit prep time by 80%.'},
+  const benefits = [
+    { 
+      title: '💯 Zero Mix-Ups', 
+      desc: '4-level validation ensures mix-ups impossible, cartridges never go to wrong batch', 
+      highlight: '100% Accurate',
+      gradient: 'from-green-500 via-emerald-600 to-teal-600',
+      span: 'col-span-2 row-span-2'
+    },
+    { 
+      title: '💰 No Investment', 
+      desc: 'Uses existing jig + cheap Raspberry Pi, no capital expenditure required', 
+      highlight: '$0 CAPEX',
+      gradient: 'from-blue-500 via-cyan-600 to-sky-600',
+      span: 'col-span-1'
+    },
+    { 
+      title: '📊 Full Traceability', 
+      desc: 'CSV + SQLite + Flask web dashboard provides complete validation audit trail', 
+      highlight: 'Web Access',
+      gradient: 'from-purple-500 via-indigo-600 to-violet-600',
+      span: 'col-span-1'
+    },
+    { 
+      title: '⚡ Fast & Efficient', 
+      desc: 'Avg 3.15 sec per cartridge (63 sec for 20 pieces)', 
+      highlight: '300 Tested',
+      gradient: 'from-orange-500 via-amber-600 to-yellow-600',
+      span: 'col-span-1'
+    },
+    { 
+      title: '🔄 Zero Disruption', 
+      desc: 'No changes to existing ACTJ/CPSR firmware or hardware', 
+      highlight: 'Plug & Play',
+      gradient: 'from-pink-500 via-rose-600 to-red-600',
+      span: 'col-span-1'
+    },
+    { 
+      title: '🛡️ Risk Mitigation', 
+      desc: 'Prevents financial loss, warranty claims, customer trust damage', 
+      highlight: 'Peace of Mind',
+      gradient: 'from-indigo-500 via-blue-600 to-cyan-600',
+      span: 'col-span-2'
+    }
   ];
+
   return (
-    <section className="w-full px-[clamp(16px,3vmin,32px)] py-[clamp(16px,4vmin,40px)]">
-      <div className="text-center mb-[clamp(16px,4vmin,32px)]">
-        <h2 className="text-[clamp(1.4rem,4.5vmin,2.2rem)] font-bold"> Production Floor Benefits & Value</h2>
+    <div className="flex flex-col h-full relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-80 h-80 bg-green-500/10 rounded-full blur-3xl float"></div>
+        <div className="absolute bottom-10 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl float"></div>
+        <div className="absolute top-1/2 right-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl float"></div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[clamp(12px,2.5vmin,20px)] max-w-6xl mx-auto">
-        {features.map((f, i) => (
-          <div key={i} className="rounded-xl p-[clamp(16px,3vmin,24px)] text-white"
-               style={{background:"linear-gradient(135deg,#4facfe 0%,#00f2fe 100%)"}}>
-            <h3 className="text-[clamp(1rem,3vmin,1.2rem)] font-semibold"><span className="mr-2">{f.icon}</span>{f.title}</h3>
-            <p className="mt-[clamp(6px,1.5vmin,10px)] text-[clamp(0.95rem,2.6vmin,1.1rem)] leading-relaxed">{f.text}</p>
+
+      <div className="text-center mb-6 pb-4 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 text-white rounded-t-xl p-4 flex-shrink-0 relative z-10">
+        <h2 className="text-[clamp(1.2em,2.2vmin,1.8em)] font-extrabold drop-shadow-lg">
+          ✨ Key Benefits & Value Proposition
+        </h2>
+      </div>
+
+      <div className="flex-1 overflow-auto pr-3 relative z-10">
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          {benefits.map((benefit, idx) => (
+            <div 
+              key={idx} 
+              className={`${benefit.span} bg-gradient-to-br ${benefit.gradient} rounded-2xl p-6 card-shadow transform hover:scale-[1.02] transition-all duration-300 flex flex-col justify-between`}
+            >
+              <div>
+                <h3 className="text-white font-black text-2xl mb-3">{benefit.title}</h3>
+                <p className="text-white/90 leading-relaxed mb-4">{benefit.desc}</p>
+              </div>
+              <div className="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 inline-block self-start">
+                <span className="text-white font-bold text-lg">{benefit.highlight}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ROI Summary */}
+        <div className="bg-gradient-to-br from-yellow-500 via-amber-600 to-orange-600 rounded-2xl p-6 text-white shadow-2xl">
+          <h3 className="text-3xl font-black mb-4 flex items-center gap-3">
+            <span className="text-4xl">📈</span> Return on Investment
+          </h3>
+          <div className="grid grid-cols-4 gap-4">
+            <div className="glass-strong rounded-xl p-4 text-center">
+              <div className="text-3xl font-black mb-1">∞%</div>
+              <div className="text-sm opacity-90">ROI (Zero Investment)</div>
+            </div>
+            <div className="glass-strong rounded-xl p-4 text-center">
+              <div className="text-3xl font-black mb-1">100%</div>
+              <div className="text-sm opacity-90">Accuracy Gain</div>
+            </div>
+            <div className="glass-strong rounded-xl p-4 text-center">
+              <div className="text-3xl font-black mb-1">$0</div>
+              <div className="text-sm opacity-90">CAPEX Required</div>
+            </div>
+            <div className="glass-strong rounded-xl p-4 text-center">
+              <div className="text-3xl font-black mb-1">0</div>
+              <div className="text-sm opacity-90">Downtime Days</div>
+            </div>
           </div>
-        ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

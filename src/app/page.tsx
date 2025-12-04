@@ -1,5 +1,5 @@
-import Presentation from '@/components/Presentation';
+import InteractivePresentation from '@/components/InteractivePresentation';
 
 export default function Home() {
-  return <Presentation />;
+  return <InteractivePresentation />;
 }

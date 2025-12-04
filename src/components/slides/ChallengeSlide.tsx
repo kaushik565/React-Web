@@ -1,116 +1,100 @@
 export default function ChallengeSlide() {
+  const incidents = [
+    { id: 'IR25/III/QA/063', issue: 'Line-C materials stored in Line-A', type: 'Cross-line mix-up', severity: 'critical' },
+    { id: 'IR25/III/QA/069', issue: 'Cartridge found without QR label', type: 'Missing QR label', severity: 'high' },
+    { id: 'IR25/III/QA/068', issue: 'Cross-batch mixing S13 with S14 QR', type: 'Wrong batch & mould', severity: 'critical' },
+    { id: 'IR25/III/QC/071', issue: '13/200 units from another line in QC', type: 'Wrong batch', severity: 'high' },
+    { id: 'IR25/III/QA/072', issue: 'QR labels re-pasted; mould mismatch', type: 'QR tampering & mould', severity: 'critical' },
+    { id: 'IR25/III/QA/074', issue: 'MVANC00051 with N13 QR on N11', type: 'Wrong mould', severity: 'high' }
+  ];
+
+  const features = [
+    { icon: '🎯', title: 'Our Solution', desc: 'Automated QR Scanning Jig\nPython + CPSR integration\nReal-time validation' },
+    { icon: '💎', title: 'Quality Impact', desc: 'Prevents batch/line mix-ups\nReduces rework\nZero additional cost' },
+    { icon: '⚙️', title: 'Technology', desc: 'Raspberry Pi 3B+\nGM65 QR Scanner\nTkinter UI + Flask' },
+    { icon: '✅', title: 'Proven Results', desc: '300 cartridges tested\n100% accuracy\n1:03 per 20 units' }
+  ];
+
   return (
-    <div className="flex flex-col h-full">
-      <div className="text-center mb-[clamp(8px,1.5vmin,15px)] pb-[clamp(6px,0.8vmin,10px)] border-b-[3px] border-primary flex-shrink-0">
-        <h2 className="text-[clamp(1.1em,2vmin,1.6em)] text-primary font-bold">
+    <div className="flex flex-col h-full relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-20 w-80 h-80 bg-red-500/10 rounded-full blur-3xl float"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl float"></div>
+      </div>
+
+      <div className="text-center mb-6 pb-4 bg-gradient-to-r from-red-600 via-orange-600 to-amber-600 text-white rounded-t-xl p-4 flex-shrink-0 relative z-10">
+        <h2 className="text-[clamp(1.2em,2.2vmin,1.8em)] font-extrabold drop-shadow-lg">
           📋 The Challenge & Our Solution
         </h2>
       </div>
 
-      <div className="flex-1 overflow-auto pr-3 text-[clamp(0.75em,1.15vmin,0.95em)] leading-[1.4]">
-        <div className="grid grid-cols-2 gap-[clamp(10px,1.5vmin,14px)] mb-[clamp(12px,1.5vmin,16px)]">
-          {/* Incidents Card */}
-          <div className="bg-gradient-to-br from-red-50 to-red-100 p-[clamp(12px,1.8vmin,16px)] rounded-xl border border-red-200 shadow-md">
-            <div className="text-[clamp(0.92em,1.05vmin,1.05em)] font-bold mb-2 text-red-800">
-              📌 Recent Incidents (Sept–Oct 2025)
-            </div>
-            <ul className="space-y-1 list-none">
-              <li className="relative pl-6 before:content-['⚠️'] before:absolute before:left-0">
-                IR25/III/QA/063 – Line-C materials stored in Line-A – <strong>Cross-line mix-up</strong>
-              </li>
-              <li className="relative pl-6 before:content-['⚠️'] before:absolute before:left-0">
-                IR25/III/QA/069 – One cartridge found without QR label – <strong>Missing QR label</strong>
-              </li>
-              <li className="relative pl-6 before:content-['⚠️'] before:absolute before:left-0">
-                IR25/III/QA/068 – Cross-batch mixing; S13 with S14 QR – <strong>Wrong batch</strong> & <strong>Wrong mould</strong>
-              </li>
-              <li className="relative pl-6 before:content-['⚠️'] before:absolute before:left-0">
-                IR25/III/QC/071 – 13/200 units from another line in QC – <strong>Wrong batch</strong>
-              </li>
-              <li className="relative pl-6 before:content-['⚠️'] before:absolute before:left-0">
-                IR25/III/QA/072 – QR labels re-pasted; mould mismatch – <strong>QR label tampering</strong> & <strong>Wrong mould</strong>
-              </li>
-              <li className="relative pl-6 before:content-['⚠️'] before:absolute before:left-0">
-                IR25/III/QA/074 – MVANC00051 with N13 QR on N11 – <strong>Wrong mould</strong>
-              </li>
-            </ul>
-          </div>
-
-          {/* Root Cause Card */}
-          <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-[clamp(12px,1.8vmin,16px)] rounded-xl border border-orange-200 shadow-md">
-            <div className="text-[clamp(0.92em,1.05vmin,1.05em)] font-bold mb-2 text-orange-800">
-              ⚠️ Root Cause
-            </div>
-            <ul className="space-y-1 list-none">
-              <li className="relative pl-5 before:content-['▸'] before:absolute before:left-0 before:text-orange-600">
-                <strong>CPSR today:</strong> Scans and counts QR codes; does not validate Line ID, Batch, or QR range.
-              </li>
-              <li className="relative pl-5 before:content-['▸'] before:absolute before:left-0 before:text-orange-600">
-                <strong>Manual checks:</strong> Inconsistent for wrong batch, cross-line mix-ups, or tampered labels.
-              </li>
-              <li className="relative pl-5 before:content-['▸'] before:absolute before:left-0 before:text-orange-600">
-                Result: Rework, delays, and traceability gaps.
-              </li>
-            </ul>
-            <div className="mt-3 bg-orange-200/40 rounded-lg p-[clamp(8px,1.2vmin,12px)] text-[clamp(0.84em,0.95vmin,0.95em)] font-semibold">
-              Common patterns: <strong>wrong batch</strong>, <strong>wrong mould</strong>, <strong>cross-line mix-up</strong> & <strong>QR tampering</strong> → Manual verification alone is not reliable.
+      <div className="flex-1 overflow-auto pr-3 relative z-10">
+        {/* Problem Statement */}
+        <div className="glass-strong rounded-2xl p-6 mb-6 border-l-4 border-red-500">
+          <div className="flex items-start gap-4">
+            <div className="text-5xl">🚨</div>
+            <div>
+              <h3 className="text-2xl font-bold text-red-400 mb-2">The Problem</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                <strong>6 critical incidents in 2 months</strong> (Sept–Oct 2025) involving batch mix-ups, 
+                cross-line contamination, QR tampering, and mould mismatches — all preventable with automated validation.
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Solution Box */}
-        <div className="bg-gradient-to-r from-primary to-primary-dark text-white p-[clamp(12px,1.8vmin,16px)] rounded-xl mb-[clamp(12px,1.5vmin,16px)]">
-          <div className="text-[clamp(0.92em,1.05vmin,1.05em)] font-bold mb-2">💡 The Solution</div>
-          <p className="mb-2">
-            <strong>By implementing this QR Scanning JIG in our production line, we can eliminate batch mix-ups and automatically detect cartridges mixed in wrong batches.</strong>
-          </p>
-          <p className="text-[clamp(0.84em,0.95vmin,0.92em)]">
-            We used the existing <strong>ACTJ Jig</strong> for automated detection – it scans QR codes, validates Line ID, Batch range, and format in real-time, then automatically routes cartridges to PASS or REJECT bins. No manual intervention; zero human error.
+        {/* Incidents Grid */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          {incidents.map((incident, idx) => (
+            <div key={idx} className={`glass rounded-xl p-4 border-l-4 ${incident.severity === 'critical' ? 'border-red-500' : 'border-orange-500'} hover:bg-white/10 transition-all`}>
+              <div className="flex items-start gap-3">
+                <div className="text-2xl">⚠️</div>
+                <div className="flex-1">
+                  <div className="text-sm font-bold text-cyan-400 mb-1">{incident.id}</div>
+                  <p className="text-white text-sm mb-2">{incident.issue}</p>
+                  <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${
+                    incident.severity === 'critical' ? 'bg-red-500/20 text-red-400' : 'bg-orange-500/20 text-orange-400'
+                  }`}>
+                    {incident.type}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Root Cause */}
+        <div className="glass rounded-2xl p-6 mb-6 border-2 border-orange-500/30">
+          <h3 className="text-xl font-bold text-orange-400 mb-4 flex items-center gap-2">
+            <span className="text-2xl">💡</span> Root Cause Analysis
+          </h3>
+          <div className="space-y-2 text-gray-300">
+            <p>• <strong>CPSR Limitation:</strong> Only scans and counts — no Line ID, Batch, or range validation</p>
+            <p>• <strong>Manual Checks:</strong> Inconsistent and error-prone for detecting mix-ups or tampering</p>
+            <p>• <strong>Result:</strong> Rework delays, traceability gaps, and quality risks</p>
+          </div>
+        </div>
+
+        {/* Solution Banner */}
+        <div className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 rounded-2xl p-6 mb-6 text-white shadow-2xl">
+          <h3 className="text-2xl font-black mb-3 flex items-center gap-2">
+            <span className="text-3xl">✨</span> The Solution
+          </h3>
+          <p className="text-lg leading-relaxed">
+            <strong>Automated QR Scanning Jig</strong> using existing ACTJ infrastructure — validates Line ID, Batch range, 
+            and format in real-time, auto-routing cartridges to PASS/REJECT bins with zero human intervention.
           </p>
         </div>
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-2 gap-[clamp(10px,1.5vmin,14px)]">
-          <div className="bg-gradient-to-br from-primary to-primary-dark text-white p-[clamp(14px,2vmin,18px)] rounded-xl shadow-lg">
-            <h3 className="text-[clamp(0.95em,1.1vmin,1.1em)] font-bold mb-2 flex items-center gap-2">
-              <span>🎯</span> Our Solution
-            </h3>
-            <p className="text-[clamp(0.84em,0.95vmin,0.92em)] leading-relaxed">
-              <strong>Automated QR Scanning Jig</strong><br />
-              Our New Python Software + CPSR integration<br />
-              Real-time QR validation detects Batch Mix-Up.
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-primary to-primary-dark text-white p-[clamp(14px,2vmin,18px)] rounded-xl shadow-lg">
-            <h3 className="text-[clamp(0.95em,1.1vmin,1.1em)] font-bold mb-2 flex items-center gap-2">
-              <span>💎</span> Quality Impact
-            </h3>
-            <p className="text-[clamp(0.84em,0.95vmin,0.92em)] leading-relaxed">
-              Prevents batch/line mix-ups; reduces rework; full traceability<br />
-              <strong>Zero additional cost – uses existing infra</strong>
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-primary to-primary-dark text-white p-[clamp(14px,2vmin,18px)] rounded-xl shadow-lg">
-            <h3 className="text-[clamp(0.95em,1.1vmin,1.1em)] font-bold mb-2 flex items-center gap-2">
-              <span>⚙️</span> Technology Stack
-            </h3>
-            <p className="text-[clamp(0.84em,0.95vmin,0.92em)] leading-relaxed">
-              Raspberry Pi 3B+; GM65 QR Scanner; Tkinter UI; SQLite + Flask dashboard
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-primary to-primary-dark text-white p-[clamp(14px,2vmin,18px)] rounded-xl shadow-lg">
-            <h3 className="text-[clamp(0.95em,1.1vmin,1.1em)] font-bold mb-2 flex items-center gap-2">
-              <span>✅</span> Proven Results
-            </h3>
-            <p className="text-[clamp(0.84em,0.95vmin,0.92em)] leading-relaxed">
-              300 cartridges tested<br />
-              100% accuracy; zero false rejects<br />
-              1 min 03 sec per 20 cartridges
-            </p>
-          </div>
+        <div className="grid grid-cols-4 gap-4">
+          {features.map((feature, idx) => (
+            <div key={idx} className="glass-strong rounded-xl p-5 text-center transform hover:scale-105 transition-all duration-300 card-shadow">
+              <div className="text-4xl mb-3">{feature.icon}</div>
+              <h4 className="text-lg font-bold text-white mb-2">{feature.title}</h4>
+              <p className="text-gray-400 text-sm whitespace-pre-line leading-relaxed">{feature.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

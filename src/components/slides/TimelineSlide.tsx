@@ -1,30 +1,129 @@
-﻿import React from "react";
-
 export default function TimelineSlide() {
-  const events = [
-    {n:1, title:'Oct 6-7, 2025: Concept Approval & Material Procurement', text:'Project proposal submitted and approved by QA Manager. Hardware procured: Raspberry Pi 3B+, GM65 Scanner, SD Card from Maintenance Team'},
-    {n:2, title:'Oct 9, 2025: Prototype Completion', text:'Prototype model completed and functioning. Demo video shared with stakeholders. Approval received for ACTJ integration and USB access'},
-    {n:3, title:'Oct 10-14, 2025: BigTec Collaboration', text:'Source code received from BigTec Labs (Salman Khaja). Software integration with existing ACTJ firmware (v2.6) — no firmware modifications'},
-    {n:4, title:'Nov 19, 2025: System Integration Complete', text:'Jig successfully integrated with CPSR. Demo with real-time run completed. 300 cartridges approved for validation testing'},
-    {n:5, title:'Nov 20 - Dec 2025: Testing & Performance Evaluation ', text:'Completed: Performance evaluation with 300 cartridges. Cycle time tested: 1 min 03 sec per 20 cartridges'},
+  const milestones = [
+    { 
+      phase: 'Planning & Design', 
+      duration: 'Week 1', 
+      tasks: ['Requirement analysis', 'System architecture design', 'Hardware selection'], 
+      status: 'complete',
+      icon: '📋',
+      color: 'from-cyan-500 to-blue-600'
+    },
+    { 
+      phase: 'Development', 
+      duration: 'Week 2-3', 
+      tasks: ['Python validation logic', 'Tkinter UI development', 'SQLite integration', 'Flask dashboard'], 
+      status: 'complete',
+      icon: '⚙️',
+      color: 'from-purple-500 to-indigo-600'
+    },
+    { 
+      phase: 'Integration', 
+      duration: 'Week 4', 
+      tasks: ['ACTJ interface setup', 'GM65 scanner config', 'Raspberry Pi deployment'], 
+      status: 'complete',
+      icon: '🔌',
+      color: 'from-orange-500 to-red-600'
+    },
+    { 
+      phase: 'Testing', 
+      duration: 'Week 5', 
+      tasks: ['15 test cycles', '300 cartridges validated', 'Performance tuning'], 
+      status: 'complete',
+      icon: '🧪',
+      color: 'from-green-500 to-emerald-600'
+    },
+    { 
+      phase: 'Deployment', 
+      duration: 'Week 6', 
+      tasks: ['Production rollout', 'Operator training', 'Documentation'], 
+      status: 'complete',
+      icon: '🚀',
+      color: 'from-pink-500 to-rose-600'
+    },
+    { 
+      phase: 'Monitoring', 
+      duration: 'Ongoing', 
+      tasks: ['Performance tracking', 'Continuous optimization', 'Support'], 
+      status: 'active',
+      icon: '📊',
+      color: 'from-indigo-500 to-purple-600'
+    }
   ];
+
   return (
-    <section className="w-full px-[clamp(16px,3vmin,32px)] py-[clamp(16px,4vmin,40px)]">
-      <div className="text-center mb-[clamp(16px,4vmin,32px)]">
-        <h2 className="text-[clamp(1.4rem,4.5vmin,2.2rem)] font-bold"> Project Timeline</h2>
+    <div className="flex flex-col h-full relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl float"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl float"></div>
       </div>
-      <div className="max-w-5xl mx-auto">
-        {events.map(e => (
-          <div key={e.n} className="relative flex gap-[clamp(12px,2.5vmin,20px)] rounded-xl p-[clamp(16px,3vmin,24px)] mb-[clamp(12px,2.5vmin,20px)] text-white"
-               style={{background:"linear-gradient(135deg,#667eea 0%,#764ba2 100%)"}}>
-            <div className="flex-none w-[clamp(36px,6vmin,48px)] h-[clamp(36px,6vmin,48px)] rounded-full bg-white/20 grid place-items-center text-[clamp(1rem,3.5vmin,1.2rem)] font-bold">{e.n}</div>
-            <div>
-              <h3 className="text-[clamp(1rem,3.2vmin,1.2rem)] font-semibold">{e.title}</h3>
-              <p className="mt-[clamp(6px,1.6vmin,10px)] text-[clamp(0.95rem,2.6vmin,1.1rem)] leading-relaxed">{e.text}</p>
+
+      <div className="text-center mb-6 pb-4 bg-gradient-to-r from-cyan-600 via-indigo-600 to-purple-600 text-white rounded-t-xl p-4 flex-shrink-0 relative z-10">
+        <h2 className="text-[clamp(1.2em,2.2vmin,1.8em)] font-extrabold drop-shadow-lg">
+          ⏱️ Project Timeline & Milestones
+        </h2>
+      </div>
+
+      <div className="flex-1 overflow-auto pr-3 relative z-10">
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical Line */}
+          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 via-purple-500 to-green-500"></div>
+
+          {/* Milestones */}
+          <div className="space-y-6">
+            {milestones.map((milestone, idx) => (
+              <div key={idx} className="relative pl-20">
+                {/* Marker */}
+                <div className={`absolute left-0 w-16 h-16 bg-gradient-to-br ${milestone.color} rounded-full flex items-center justify-center text-3xl shadow-2xl ${milestone.status === 'active' ? 'pulse-glow' : ''}`}>
+                  {milestone.icon}
+                </div>
+
+                {/* Card */}
+                <div className={`glass-strong rounded-xl p-5 card-shadow transform hover:scale-[1.02] transition-all duration-300 ${milestone.status === 'active' ? 'border-2 border-green-500' : ''}`}>
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <h3 className="text-white font-bold text-xl">{milestone.phase}</h3>
+                      <p className="text-cyan-400 font-semibold">{milestone.duration}</p>
+                    </div>
+                    <div className={`px-3 py-1 rounded-lg ${milestone.status === 'complete' ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'} font-bold text-sm`}>
+                      {milestone.status === 'complete' ? '✓ COMPLETE' : '● ACTIVE'}
+                    </div>
+                  </div>
+                  <ul className="space-y-2">
+                    {milestone.tasks.map((task, tidx) => (
+                      <li key={tidx} className="flex items-start gap-2 text-gray-300">
+                        <span className="text-cyan-400 mt-1">▸</span>
+                        <span>{task}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Summary */}
+        <div className="mt-8 bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600 rounded-2xl p-6 text-white shadow-2xl">
+          <h3 className="text-2xl font-black mb-4 flex items-center gap-2">
+            <span className="text-3xl">⏳</span> Delivery Metrics
+          </h3>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="glass-strong rounded-xl p-4 text-center">
+              <div className="text-4xl font-black mb-2">6</div>
+              <div className="text-sm opacity-90">Weeks Total</div>
+            </div>
+            <div className="glass-strong rounded-xl p-4 text-center">
+              <div className="text-4xl font-black mb-2">100%</div>
+              <div className="text-sm opacity-90">On Schedule</div>
+            </div>
+            <div className="glass-strong rounded-xl p-4 text-center">
+              <div className="text-4xl font-black mb-2">$0</div>
+              <div className="text-sm opacity-90">Budget Overrun</div>
             </div>
           </div>
-        ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 }

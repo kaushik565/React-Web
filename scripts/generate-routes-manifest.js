@@ -13,6 +13,11 @@ const routesManifest = {
     pages404: true,
     basePath: "",
     redirects: [],
+    rewrites: {
+        beforeFiles: [],
+        afterFiles: [],
+        fallback: []
+    },
     headers: [],
     dynamicRoutes: [{
             page: "/",

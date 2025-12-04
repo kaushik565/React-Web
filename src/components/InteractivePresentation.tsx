@@ -335,7 +335,8 @@ export default function InteractivePresentation() {
             <div className="glass-strong rounded-3xl p-8 border-2 border-orange-500/50 hover:scale-105 transition-all group">
               <div className="text-6xl mb-4 group-hover:rotate-12 transition-transform">🔍</div>
               <div className="text-2xl font-bold text-orange-400 mb-4">Root Cause</div>
-              <p className="text-gray-300 mb-4">QR scan without validation</p>
+              <p className="text-gray-300 mb-3">Wrong batch, wrong mould, cross-line mix-up & QR tampering</p>
+              <p className="text-gray-300 mb-4 text-sm italic">→ Manual verification alone is not reliable.</p>
               <div className="px-3 py-1 rounded-full bg-orange-900/40 inline-block">
                 <span className="text-sm font-bold text-orange-300">HIGH</span>
               </div>

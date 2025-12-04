@@ -36,9 +36,9 @@ export default function BenefitsSlide() {
       span: 'col-span-1'
     },
     { 
-      title: '🛡️ Risk Mitigation', 
-      desc: 'Prevents financial loss, warranty claims, customer trust damage', 
-      highlight: 'Peace of Mind',
+      title: '📋 QMS Traceability', 
+      desc: 'Complete audit trail with timestamps, batch IDs, line IDs, and operator validation logs for regulatory compliance', 
+      highlight: 'FDA Ready',
       gradient: 'from-indigo-500 via-blue-600 to-cyan-600',
       span: 'col-span-2'
     }

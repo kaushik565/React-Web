@@ -97,7 +97,7 @@ export default function Presentation() {
       window.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
-  }, [handleNext, handlePrev, toggleFullscreen]);
+  }, [handleNext, handlePrev, toggleFullscreen, totalSlides, showHelp]);
 
   return (
     <>

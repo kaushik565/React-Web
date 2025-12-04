@@ -1,9 +1,0 @@
-{
-    "buildCommand": "npm run build",
-    "framework": "nextjs",
-    "env": {
-        "NEXT_TELEMETRY_DISABLED": "1"
-    },
-    "devCommand": "npm run dev",
-    "installCommand": "npm install"
-}

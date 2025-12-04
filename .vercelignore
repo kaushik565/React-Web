@@ -1,0 +1,8 @@
+# Ignore static export output
+out/
+
+# Ignore common build artifacts
+.next/cache
+node_modules/
+.git
+.gitignore

@@ -178,7 +178,7 @@ export default function InteractivePresentation() {
       )}
 
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-gray-800 z-50">
+      <div className="fixed top-0 left-0 w-full h-1 bg-gray-700 z-50">
         <div 
           className="h-full bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 transition-all duration-300"
           style={{ width: `${scrollProgress}%` }}
@@ -255,10 +255,10 @@ export default function InteractivePresentation() {
 
             {/* Developer Info */}
             <div className="mb-6">
-              <p className="text-lg text-gray-400 mb-1">Developed by:</p>
+              <p className="text-lg text-gray-300 mb-1">Developed by:</p>
               <p className="text-3xl font-black text-white">P. Lakshmana Sai Kaushik</p>
               <p className="text-xl text-purple-400">QA Supervisor — Molbio Diagnostics Limited</p>
-              <p className="text-md text-gray-500 mt-2">October 2025 – December 2025</p>
+              <p className="text-md text-gray-300 mt-2">October 2025 – December 2025</p>
             </div>
 
             {/* One-Line Impact */}
@@ -275,23 +275,23 @@ export default function InteractivePresentation() {
               <div className="grid md:grid-cols-4 gap-4">
                 <div className="glass-strong rounded-xl p-4">
                   <div className="text-3xl font-black text-cyan-400">100%</div>
-                  <div className="text-sm text-gray-400">Accuracy</div>
-                  <div className="text-xs text-gray-500">Zero False Rejections</div>
+                  <div className="text-sm text-gray-200">Accuracy</div>
+                  <div className="text-xs text-gray-300">Zero False Rejections</div>
                 </div>
                 <div className="glass-strong rounded-xl p-4">
                   <div className="text-3xl font-black text-green-400">300</div>
-                  <div className="text-sm text-gray-400">Cartridges</div>
-                  <div className="text-xs text-gray-500">Successfully Tested</div>
+                  <div className="text-sm text-gray-200">Cartridges</div>
+                  <div className="text-xs text-gray-300">Successfully Tested</div>
                 </div>
                 <div className="glass-strong rounded-xl p-4">
                   <div className="text-3xl font-black text-purple-400">✓</div>
-                  <div className="text-sm text-gray-400">QR Validation</div>
-                  <div className="text-xs text-gray-500">Eliminates Manual Error</div>
+                  <div className="text-sm text-gray-200">QR Validation</div>
+                  <div className="text-xs text-gray-300">Eliminates Manual Error</div>
                 </div>
                 <div className="glass-strong rounded-xl p-4">
                   <div className="text-3xl font-black text-orange-400">📊</div>
-                  <div className="text-sm text-gray-400">Full Traceability</div>
-                  <div className="text-xs text-gray-500">CSV Logs</div>
+                  <div className="text-sm text-gray-200">Full Traceability</div>
+                  <div className="text-xs text-gray-300">CSV Logs</div>
                 </div>
               </div>
             </div>
@@ -325,7 +325,7 @@ export default function InteractivePresentation() {
               <div className="text-6xl mb-4 group-hover:rotate-12 transition-transform">📊</div>
               <div className="text-5xl font-black bg-gradient-to-r from-red-400 to-red-600 text-transparent bg-clip-text mb-2">6+</div>
               <h3 className="text-2xl font-bold text-red-400 mb-2">Mix-up Incidents</h3>
-              <p className="text-gray-400">Repeated across multiple batches</p>
+              <p className="text-gray-200">Repeated across multiple batches</p>
               <div className="mt-4 px-3 py-1 rounded-full bg-red-900/40 inline-block">
                 <span className="text-sm font-bold text-red-300">CRITICAL</span>
               </div>
@@ -420,6 +420,141 @@ export default function InteractivePresentation() {
           <h2 className="text-5xl font-black text-center mb-12 bg-gradient-to-r from-green-400 to-emerald-400 text-transparent bg-clip-text reveal">
             💡 The Solution
           </h2>
+
+          {/* Our Solution - What We Have Done */}
+          <div className="glass-strong rounded-3xl p-8 mb-8 reveal border-2 border-green-500/30">
+            <div className="flex items-start gap-4 mb-6">
+              <span className="text-5xl">🎯</span>
+              <div>
+                <h3 className="text-3xl font-bold mb-4 text-green-400">Our Solution: Automatic QR Scanning JIG</h3>
+                <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                  We developed an intelligent QR Scanning JIG that automatically validates every cartridge and prevents batch mix-ups without any operator intervention.
+                </p>
+                
+                <div className="p-6 rounded-2xl bg-gradient-to-r from-green-900/40 to-emerald-900/40 border border-green-500/30 mb-6">
+                  <h4 className="text-2xl font-bold text-green-300 mb-4">How Our JIG Works</h4>
+                  <div className="space-y-3 text-gray-200">
+                    <p className="flex items-start gap-3">
+                      <span className="text-green-400 text-xl flex-shrink-0">1.</span>
+                      <span><strong>Scans QR Code:</strong> GM65 scanner reads the 14-character QR code from each cartridge</span>
+                    </p>
+                    <p className="flex items-start gap-3">
+                      <span className="text-green-400 text-xl flex-shrink-0">2.</span>
+                      <span><strong>Validates Automatically:</strong> System checks if QR belongs to current batch (Line ID, Batch Range, Format)</span>
+                    </p>
+                    <p className="flex items-start gap-3">
+                      <span className="text-green-400 text-xl flex-shrink-0">3.</span>
+                      <span><strong>Auto-Diverts Cartridges:</strong> Based on validation result, ACTJ actuators automatically route cartridges to PASS bin or REJECT bin</span>
+                    </p>
+                    <p className="flex items-start gap-3">
+                      <span className="text-green-400 text-xl flex-shrink-0">4.</span>
+                      <span><strong>Zero Operator Intervention:</strong> No manual decisions required — fully automated validation and routing</span>
+                    </p>
+                  </div>
+                </div>
+
+                <h4 className="text-2xl font-bold text-green-300 mb-4">How It Reduces Batch Mix-ups</h4>
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  {[
+                    { icon: '🔍', title: 'Line ID Validation', desc: 'Extracts Line ID from QR Position 2 → Ensures cartridges from Line A don\'t mix with Line B' },
+                    { icon: '📊', title: 'Batch Range Check', desc: 'Validates QR is within configured Start/End range → Rejects wrong batch cartridges' },
+                    { icon: '🔄', title: 'Duplicate Detection', desc: 'Tracks scanned QRs in session → Prevents re-scanning same cartridge multiple times' },
+                    { icon: '🎯', title: 'Format Validation', desc: '14-char alphanumeric check → Rejects invalid or tampered QR codes' }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex gap-3 p-4 rounded-xl bg-green-900/20 border border-green-500/30">
+                      <span className="text-3xl flex-shrink-0">{item.icon}</span>
+                      <div>
+                        <p className="font-bold text-green-300 mb-1">{item.title}</p>
+                        <p className="text-gray-300 text-sm">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <h4 className="text-2xl font-bold text-cyan-300 mb-4">Key Features of Our JIG</h4>
+                <div className="space-y-4">
+                  {/* LED Visual Indicators */}
+                  <div className="flex gap-4 p-4 rounded-xl bg-cyan-900/20 border border-cyan-500/30">
+                    <span className="text-3xl flex-shrink-0">💡</span>
+                    <div>
+                      <p className="font-bold text-cyan-300 text-lg">LED Visual Indicators</p>
+                      <p className="text-gray-300"><span className="text-green-400">GREEN</span> = Pass | <span className="text-yellow-400">YELLOW</span> = Duplicate | <span className="text-red-400">RED</span> = Reject — Instant visual feedback for operators</p>
+                    </div>
+                  </div>
+
+                  {/* Buzzer Alert */}
+                  <div className="flex gap-4 p-4 rounded-xl bg-cyan-900/20 border border-cyan-500/30">
+                    <span className="text-3xl flex-shrink-0">🔊</span>
+                    <div>
+                      <p className="font-bold text-cyan-300 text-lg">Buzzer Sound Alert</p>
+                      <p className="text-gray-300">Audible beep for rejected cartridges — Alerts operator immediately when issues detected</p>
+                    </div>
+                  </div>
+
+                  {/* Tkinter UI Dashboard */}
+                  <div className="flex gap-4 p-4 rounded-xl bg-cyan-900/20 border border-cyan-500/30">
+                    <span className="text-3xl flex-shrink-0">📺</span>
+                    <div>
+                      <p className="font-bold text-cyan-300 text-lg">Tkinter UI Display</p>
+                      <p className="text-gray-300 mb-2">Real-time statistics visible on JIG screen:</p>
+                      <ul className="text-gray-300 text-sm space-y-1 ml-4">
+                        <li>• <strong>Total Scanned:</strong> Live count of all scanned cartridges</li>
+                        <li>• <strong>Batch Number:</strong> Current batch being processed</li>
+                        <li>• <strong>Pass Count:</strong> Number of validated cartridges</li>
+                        <li>• <strong>Reject Count:</strong> Number of rejected cartridges</li>
+                        <li>• <strong>Duplicate Count:</strong> Already scanned QRs detected</li>
+                        <li>• <strong>Timeline:</strong> Session duration and time tracking</li>
+                        <li>• <strong>Last Scanned QR:</strong> Most recent QR code processed</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Multi-Mould Support */}
+                  <div className="flex gap-4 p-4 rounded-xl bg-cyan-900/20 border border-cyan-500/30">
+                    <span className="text-3xl flex-shrink-0">🔧</span>
+                    <div>
+                      <p className="font-bold text-cyan-300 text-lg">Multi-Mould Batch Support</p>
+                      <p className="text-gray-300">Handles batches with multiple moulds — Configure QR ranges for 1, 2, 3+ moulds per batch seamlessly</p>
+                    </div>
+                  </div>
+
+                  {/* Web Dashboard */}
+                  <div className="flex gap-4 p-4 rounded-xl bg-cyan-900/20 border border-cyan-500/30">
+                    <span className="text-3xl flex-shrink-0">🌐</span>
+                    <div>
+                      <p className="font-bold text-cyan-300 text-lg">Flask Web Dashboard</p>
+                      <p className="text-gray-300">Remote access to scan logs via browser (:8080) — View history, download CSV reports, audit trail</p>
+                    </div>
+                  </div>
+
+                  {/* Full Traceability */}
+                  <div className="flex gap-4 p-4 rounded-xl bg-cyan-900/20 border border-cyan-500/30">
+                    <span className="text-3xl flex-shrink-0">📋</span>
+                    <div>
+                      <p className="font-bold text-cyan-300 text-lg">Complete Traceability</p>
+                      <p className="text-gray-300">CSV logs + SQLite database — Every scan recorded with timestamp, batch, result, operator details</p>
+                    </div>
+                  </div>
+
+                  {/* Auto-Resume & Data Persistence */}
+                  <div className="flex gap-4 p-4 rounded-xl bg-purple-900/20 border border-purple-500/30">
+                    <span className="text-3xl flex-shrink-0">💾</span>
+                    <div>
+                      <p className="font-bold text-purple-300 text-lg">Auto-Resume & Data Persistence</p>
+                      <p className="text-gray-300 mb-2">Zero data loss even during power interruptions:</p>
+                      <ul className="text-gray-300 text-sm space-y-1 ml-4">
+                        <li>• <strong>Automatic State Recovery:</strong> JIG resumes from last scanned QR when powered back on</li>
+                        <li>• <strong>Count Preservation:</strong> All counts (total, pass, reject, duplicate) retained in database</li>
+                        <li>• <strong>Session Continuity:</strong> Display shows exact state before shutdown — no manual re-entry needed</li>
+                        <li>• <strong>Persistent Storage:</strong> SQLite database ensures no scanned data is ever lost</li>
+                      </ul>
+                      <p className="text-purple-200 text-sm mt-2 italic">→ Operators can continue exactly where they left off, maintaining workflow continuity</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Current Situation */}
           <div className="glass-strong rounded-3xl p-8 mb-8 reveal border-2 border-blue-500/30">
@@ -538,7 +673,7 @@ export default function InteractivePresentation() {
                     {[
                       { num: '1️⃣', title: 'Batch Configuration', desc: 'Operator inputs: Batch Number, Line ID, Mould count, QR Start/End ranges' },
                       { num: '2️⃣', title: 'QR Scanning', desc: 'GM65 scanner reads 14-char QRs; system validates & auto-routes to bins' },
-                      { num: '3️⃣', title: '4-Level Validation', desc: 'Format → Line ID → Batch Range → Duplicate checks ensure only correct units pass' },
+                      { num: '3️⃣', title: '4-Level Validation', desc: 'Format → Line ID → Batch Range → Duplicate checks ensure only correct cartridges pass' },
                       { num: '4️⃣', title: 'Visual Feedback & Routing', desc: 'GREEN (pass), YELLOW (duplicate), RED (reject) + ACTJ auto-diversion to bins' }
                     ].map((step, idx) => (
                       <div key={idx} className="glass rounded-2xl p-4 hover:scale-105 transition-all border border-purple-500/30">
@@ -736,18 +871,18 @@ export default function InteractivePresentation() {
                 }
               }
             ].map((step, idx) => (
-              <div key={idx} className={`bg-gradient-to-br ${step.color} rounded-3xl p-8 hover:scale-105 transition-all duration-300 group reveal`}>
+              <div key={idx} className={`glass-strong rounded-2xl p-8 border-l-4 border-${step.color.split(' ')[1].replace('to-', '')}/60 hover:border-l-8 transition-all duration-300 group reveal`}>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="glass-strong rounded-full w-16 h-16 flex items-center justify-center text-2xl font-black">
+                  <div className="glass rounded-full w-16 h-16 flex items-center justify-center text-2xl font-black border-2 border-${step.color.split(' ')[1].replace('to-', '')}/40">
                     {step.level}
                   </div>
                   <div>
                     <div className="text-5xl group-hover:scale-125 transition-transform">{step.icon}</div>
                   </div>
                 </div>
-                <h3 className="text-3xl font-black mb-6 text-white">{step.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 text-gray-100">{step.title}</h3>
                 
-                <div className="space-y-3 text-white/90">
+                <div className="space-y-3 text-gray-300">
                   {step.details.check && (
                     <div>
                       <p className="text-xs font-bold text-white/70 uppercase mb-1">Check</p>
@@ -861,8 +996,8 @@ export default function InteractivePresentation() {
             })}
           </div>
 
-          <div className="bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600 rounded-3xl p-10 text-center">
-            <h3 className="text-4xl font-black mb-6">🎯 Perfect Performance</h3>
+          <div className="glass-strong rounded-2xl p-8 text-center border-2 border-green-500/30">
+            <h3 className="text-3xl font-bold mb-6 text-green-400">🎯 Perfect Performance</h3>
             <div className="grid md:grid-cols-3 gap-6">
               <div>
                 <div className="text-5xl font-black mb-2">✓</div>
@@ -894,10 +1029,10 @@ export default function InteractivePresentation() {
               { component: 'Scanner', spec: 'GM65 QR Scanner', icon: '📱', color: 'from-purple-500 to-pink-600' },
               { component: 'JIG CPSR', spec: 'Automated Routing System', icon: '🔧', color: 'from-green-500 to-emerald-600' },
               { component: 'Software', spec: 'Python 3 + Tkinter', icon: '⚙️', color: 'from-teal-500 to-cyan-600' },
-              { component: 'Database', spec: 'SQLite (scan_state.db)', icon: '🗄️', color: 'from-pink-500 to-rose-600' },
+              { component: 'Database', spec: 'SQLite + Auto-Resume (scan_state.db)', icon: '🗄️', color: 'from-pink-500 to-rose-600' },
               { component: 'Dashboard', spec: 'Flask Web (:8080)', icon: '🌐', color: 'from-amber-500 to-orange-600' }
             ].map((spec, idx) => (
-              <div key={idx} className={`bg-gradient-to-br ${spec.color} rounded-2xl p-6 hover:scale-105 transition-all duration-300 group reveal`}>
+              <div key={idx} className={`glass-strong rounded-2xl p-6 border-l-4 border-${spec.color.split(' ')[1].replace('to-', '')}/50 hover:border-l-8 transition-all duration-300 group reveal`}>
                 <div className="flex items-center gap-4 mb-3">
                   <div className="text-5xl group-hover:rotate-12 transition-transform">{spec.icon}</div>
                   <div>
@@ -925,17 +1060,18 @@ export default function InteractivePresentation() {
               { title: '📊 Full Traceability', desc: 'CSV + SQLite + Flask dashboard provides complete audit trail', color: 'from-purple-500 to-indigo-600' },
               { title: '⚡ Fast & Efficient', desc: 'Average 3.15 seconds per cartridge processing time', color: 'from-orange-500 to-amber-600' },
               { title: '🔄 Zero Disruption', desc: 'No changes to existing ACTJ/CPSR firmware or hardware', color: 'from-pink-500 to-rose-600' },
+              { title: '💾 Auto-Resume', desc: 'Power-safe design — JIG resumes from last scan after shutdown, no data loss', color: 'from-violet-500 to-purple-600' },
               { title: '🤖 Operator Empowerment', desc: 'Instant LED + buzzer feedback. Operators focus on action, not manual QR checks.', color: 'from-indigo-500 to-blue-600' }
             ].map((benefit, idx) => (
-              <div key={idx} className={`bg-gradient-to-br ${benefit.color} rounded-3xl p-8 hover:scale-105 transition-all duration-300 reveal`}>
-                <h3 className="text-3xl font-black mb-4 text-white">{benefit.title}</h3>
-                <p className="text-white/90 text-lg">{benefit.desc}</p>
+              <div key={idx} className={`glass-strong rounded-2xl p-6 border-l-4 border-${benefit.color.split(' ')[1].replace('to-', '')}/50 hover:border-l-8 transition-all duration-300 reveal`}>
+                <h3 className="text-2xl font-bold mb-3 text-gray-100">{benefit.title}</h3>
+                <p className="text-gray-300 text-base">{benefit.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-gradient-to-br from-yellow-500 via-amber-600 to-orange-600 rounded-3xl p-10 reveal">
-            <h3 className="text-4xl font-black mb-8 text-center">📈 Project Impact & Value</h3>
+          <div className="glass-strong rounded-2xl p-8 reveal border-2 border-amber-500/30">
+            <h3 className="text-3xl font-bold mb-8 text-center text-amber-400">📈 Project Impact & Value</h3>
             
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               {/* Problems Prevented */}
@@ -1115,12 +1251,12 @@ export default function InteractivePresentation() {
                 <div className="text-6xl mb-4 group-hover:rotate-12 transition-transform">{member.icon}</div>
                 <h3 className={`text-lg font-bold mb-2 text-${member.color}-400`}>{member.title}</h3>
                 <p className="text-xl font-bold text-white mb-1">{member.name}</p>
-                <p className="text-gray-400">{member.role}</p>
+                <p className="text-gray-200">{member.role}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-gradient-to-br from-cyan-600 via-blue-600 to-indigo-600 rounded-3xl p-8 mb-6 reveal">
+          <div className="glass-strong rounded-2xl p-8 mb-6 reveal border-2 border-cyan-500/30">
             <h3 className="text-3xl font-black mb-6 text-center">🌟 Key Contributors</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="glass-strong rounded-2xl p-6">
@@ -1154,7 +1290,7 @@ export default function InteractivePresentation() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-pink-600 via-rose-600 to-red-600 rounded-3xl p-8 mb-6 reveal">
+          <div className="glass-strong rounded-2xl p-8 mb-6 reveal border-2 border-pink-500/30">
             <h3 className="text-2xl font-black mb-4">💖 Special Thanks</h3>
             <div className="glass-strong rounded-2xl p-6">
               <p className="text-xl leading-relaxed">
@@ -1163,7 +1299,7 @@ export default function InteractivePresentation() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-3xl p-8 reveal">
+          <div className="glass-strong rounded-2xl p-8 reveal border-2 border-purple-500/30">
             <h3 className="text-2xl font-black mb-4">🏆 Champions 2.0 Initiative</h3>
             <div className="glass-strong rounded-2xl p-6">
               <p className="text-lg leading-relaxed">
@@ -1189,7 +1325,7 @@ export default function InteractivePresentation() {
           {/* Testing Summary Section */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {/* Testing Complete */}
-            <div className="glass-strong rounded-3xl p-8 bg-gradient-to-br from-green-600 to-emerald-600 reveal">
+            <div className="glass-strong rounded-2xl p-8 reveal border-2 border-green-500/40">
               <h3 className="text-3xl font-black mb-6">✨ Testing Complete — Concept Proven</h3>
               <div className="space-y-4">
                 <div className="glass rounded-xl p-4">
@@ -1211,7 +1347,7 @@ export default function InteractivePresentation() {
                 </div>
                 <div className="glass rounded-xl p-4 bg-orange-900/30 border border-orange-500/50">
                   <p className="text-sm text-gray-200 uppercase font-bold mb-2">⏱️ Performance Tested</p>
-                  <p className="text-2xl font-bold text-orange-300">1 min 03 sec per 20 units</p>
+                  <p className="text-2xl font-bold text-orange-300">1 min 03 sec per 20 cartridges</p>
                 </div>
                 <div className="glass rounded-xl p-4 bg-purple-900/30 border border-purple-500/50">
                   <p className="text-sm text-gray-200 uppercase font-bold mb-2">🎯 Quality Impact</p>
@@ -1225,7 +1361,7 @@ export default function InteractivePresentation() {
             </div>
 
             {/* Next Phase */}
-            <div className="glass-strong rounded-3xl p-8 bg-gradient-to-br from-blue-600 to-cyan-600 reveal">
+            <div className="glass-strong rounded-2xl p-8 reveal border-2 border-cyan-500/40">
               <h3 className="text-3xl font-black mb-6">🤝 Next Phase — Concept Validation Complete</h3>
               <div className="space-y-4">
                 <div className="glass rounded-xl p-4 bg-white/10 border border-white/20">
@@ -1258,8 +1394,8 @@ export default function InteractivePresentation() {
           </div>
 
           {/* Final Message */}
-          <div className="glass-strong rounded-3xl p-12 mt-8 mb-8 border-4 border-purple-500/30 reveal">
-            <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-10">
+          <div className="glass-strong rounded-2xl p-8 mt-8 mb-8 border-2 border-purple-500/40 reveal">
+            <div className="glass rounded-2xl p-8 border-l-4 border-purple-500/60">
               <h3 className="text-4xl font-black mb-6">💡 Final Message</h3>
               <p className="text-3xl font-bold leading-relaxed">
                 Built-in prevention, compliance, and traceability — embedded in the process.
@@ -1268,7 +1404,7 @@ export default function InteractivePresentation() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="glass-strong rounded-3xl p-8 bg-gradient-to-br from-cyan-600 to-blue-600 reveal">
+            <div className="glass-strong rounded-2xl p-8 reveal border-l-4 border-cyan-500/60">
               <h3 className="text-3xl font-black mb-6">🎯 What We Achieved</h3>
               <div className="space-y-4 text-left text-lg">
                 <div className="flex items-center gap-3">
@@ -1289,7 +1425,7 @@ export default function InteractivePresentation() {
               </div>
             </div>
 
-            <div className="glass-strong rounded-3xl p-8 bg-gradient-to-br from-orange-600 to-red-600 reveal">
+            <div className="glass-strong rounded-2xl p-8 reveal border-l-4 border-orange-500/60">
               <h3 className="text-3xl font-black mb-6">👤 Regards</h3>
               <div className="glass-strong rounded-2xl p-8 space-y-3">
                 <p className="text-4xl font-black">P. Lakshmana Sai Kaushik</p>
@@ -1309,7 +1445,7 @@ export default function InteractivePresentation() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black/50 py-8 text-center text-gray-400">
+      <footer className="bg-black/50 py-8 text-center text-gray-200">
         <p className="text-sm">© 2025 Molbio Diagnostics Limited | Designed by QA Team</p>
         <p className="text-xs mt-2">Automatic QR Scanning & Batch Mix-up Prevention System</p>
       </footer>
